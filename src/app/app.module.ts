@@ -27,6 +27,7 @@ import { AuthGuard} from './auth-guard.service';
 import { AdminAuthGuard } from './admin-auth-guard.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { CustomFormsModule } from 'ng2-validation'
+import { DataTableModule } from 'angular5-data-table';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { CustomFormsModule } from 'ng2-validation'
     NgbModule,
     FormsModule,
     CustomFormsModule,
+    DataTableModule,
     RouterModule.forRoot([
       { path:'', component: HomeComponent },
       { path: 'products', component: ProductsComponent },
