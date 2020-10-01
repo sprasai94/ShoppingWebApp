@@ -28,6 +28,8 @@ import { AdminAuthGuard } from './admin-auth-guard.service';
 import { ProductFormComponent } from './admin/product-form/product-form.component';
 import { CustomFormsModule } from 'ng2-validation'
 import { DataTableModule } from 'angular5-data-table';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { DataTableModule } from 'angular5-data-table';
     MyOrdersComponent,
     AdminProductsComponent,
     AdminOrdersComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    ProductFilterComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,7 @@ import { DataTableModule } from 'angular5-data-table';
     CustomFormsModule,
     DataTableModule,
     RouterModule.forRoot([
-      { path:'', component: HomeComponent },
+      { path:'', component: ProductsComponent },
       { path: 'products', component: ProductsComponent },
       { path: 'shopping-cart', component: ShoppingCartComponent },
       { path: 'login', component: LoginComponent},
