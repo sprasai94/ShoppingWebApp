@@ -1,3 +1,6 @@
+import { Observable } from 'rxjs/Observable';
+import { ShoppingCartService } from './../shopping-cart.service';
+import { ShoppingCart } from './../models/shopping-cart';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './check-out.component.html',
   styleUrls: ['./check-out.component.css']
 })
-export class CheckOutComponent implements OnInit {
+export class CheckOutComponent implements OnInit { 
+  cart$: Observable<ShoppingCart>;
+  
+  constructor(private shoppingCartService: ShoppingCartService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.cart$ = await this.shoppingCartService.getCart();
   }
 
+  
+   
 }
